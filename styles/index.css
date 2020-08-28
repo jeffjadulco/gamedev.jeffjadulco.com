@@ -1,3 +1,10 @@
+@import url("https://rsms.me/inter/inter.css");
+
 @tailwind base;
 @tailwind components;
+
+body {
+  @apply bg-gray-900 text-gray-600;
+}
+
 @tailwind utilities;

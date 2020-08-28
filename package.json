@@ -8,10 +8,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.16",
+    "@mdx-js/react": "^1.6.16",
+    "@next/mdx": "^9.5.2",
     "autoprefixer": "^9.8.6",
     "next": "9.5.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "tailwindcss": "^1.7.3"
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.7.5"
   }
 }
