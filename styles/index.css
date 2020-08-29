@@ -3,6 +3,18 @@
 @tailwind base;
 @tailwind components;
 
+:root {
+  scroll-behavior: auto;
+}
+
+::-moz-selection {
+  @apply bg-teal-300 text-gray-900;
+}
+
+::selection {
+  @apply bg-teal-300 text-gray-900;
+}
+
 body {
   @apply bg-gray-900 text-gray-600;
 }
