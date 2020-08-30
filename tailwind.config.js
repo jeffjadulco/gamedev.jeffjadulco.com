@@ -13,6 +13,13 @@ module.exports = {
           950: "#161B25",
         },
       },
+      height: {
+        80: "20rem",
+        featured: "32rem",
+      },
+      letterSpacing: {
+        wiiddee: ".25em",
+      },
     },
     typography: {
       default: {
@@ -34,6 +41,9 @@ module.exports = {
             color: defaultTheme.colors.gray[500],
           },
           h4: {
+            color: defaultTheme.colors.gray[500],
+          },
+          strong: {
             color: defaultTheme.colors.gray[500],
           },
         },

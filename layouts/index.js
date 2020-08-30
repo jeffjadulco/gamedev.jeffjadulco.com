@@ -12,7 +12,7 @@ const ProjectInfo = ({ label, value }) => {
 
 const ProjectLink = ({ label, url }) => {
   return (
-    <span className="text-lg font-bold text-teal-300">
+    <span className="text-lg font-bold text-teal-300 hover:underline">
       <a href={url} target="_blank" rel="noopener noreferrer">
         {label}
         <svg
@@ -36,32 +36,27 @@ const ProjectLayout = ({ children, frontMatter }) => {
         <h1 className="text-6xl font-bold text-teal-300">
           {frontMatter.title}
         </h1>
-        <div className="mt-16 grid grid-cols-6 text-gray-600">
+        <div className="mt-8 mb-12 flex space-x-20">
+          {frontMatter.type && (
+            <ProjectInfo label="Project Type" value={frontMatter.type} />
+          )}
+          {frontMatter.year && (
+            <ProjectInfo label="Year" value={frontMatter.year} />
+          )}
+          {frontMatter.platform && (
+            <ProjectInfo label="Platform" value={frontMatter.platform} />
+          )}
+          {frontMatter.size && (
+            <ProjectInfo label="Team Size" value={frontMatter.size} />
+          )}
+          {frontMatter.engine && (
+            <ProjectInfo label="Engine & Tools" value={frontMatter.engine} />
+          )}
+        </div>
+        <div className="grid lg:grid-cols-6 gap-16 text-gray-600">
           <div className="col-span-3">
-            <div className="mb-8 flex space-x-20">
-              {frontMatter.type && (
-                <ProjectInfo label="Project Type" value={frontMatter.type} />
-              )}
-              {frontMatter.year && (
-                <ProjectInfo label="Year" value={frontMatter.year} />
-              )}
-              {frontMatter.platform && (
-                <ProjectInfo label="Platform" value={frontMatter.platform} />
-              )}
-            </div>
             <div className="prose prose-lg">{children}</div>
-            <div className="mt-8 mb-12 flex space-x-20">
-              {frontMatter.size && (
-                <ProjectInfo label="Team Size" value={frontMatter.size} />
-              )}
-              {frontMatter.engine && (
-                <ProjectInfo
-                  label="Engine & Tools"
-                  value={frontMatter.engine}
-                />
-              )}
-            </div>
-            <div className="flex space-x-8">
+            <div className="mt-8 flex space-x-8">
               {frontMatter.links &&
                 frontMatter.links.map((link) => {
                   return (
@@ -74,7 +69,21 @@ const ProjectLayout = ({ children, frontMatter }) => {
                 })}
             </div>
           </div>
-          <div className="col-span-3">images</div>
+          <div className="col-span-3">
+            <div className="mt-2 flex flex-col items-center space-y-6">
+              {frontMatter.images &&
+                frontMatter.images.map((img, index) => {
+                  return (
+                    <div>
+                      <img
+                        src={img}
+                        alt={`${frontMatter.title} screenshot ${index}`}
+                      />
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
         </div>
       </Layout>
     </>
