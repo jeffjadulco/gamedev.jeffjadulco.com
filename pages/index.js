@@ -1,14 +1,15 @@
 import { Helmet } from "../components/helmet";
 import { Layout } from "../components/layout";
-import { FeaturedCard } from "../components/featuredCard";
-import { ProjectCard } from "../components/projectCard";
+import { FeaturedCard } from "../components/cards/featuredCard";
+import { ProjectCard } from "../components/cards/projectCard";
+import { ContactForm } from "../components/contact";
 import projects from "../data/projects";
 
 export default function Home() {
   return (
     <>
       <Helmet />
-      <Layout>
+      <Layout FooterComponent={ContactForm}>
         <h1 className="mb-24 text-5xl font-bold text-teal-300">
           I’m a game developer with 5+ years of experience, specializing in
           multiplayer and online services.

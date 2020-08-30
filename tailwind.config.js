@@ -17,6 +17,9 @@ module.exports = {
         80: "20rem",
         featured: "32rem",
       },
+      width: {
+        120: "30rem",
+      },
       letterSpacing: {
         wiiddee: ".25em",
       },
