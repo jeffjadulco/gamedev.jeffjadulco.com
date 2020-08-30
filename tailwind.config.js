@@ -15,10 +15,12 @@ module.exports = {
       },
       height: {
         80: "20rem",
+        90: "22.5rem",
         featured: "32rem",
       },
       width: {
         120: "30rem",
+        160: "40rem",
       },
       letterSpacing: {
         wiiddee: ".25em",

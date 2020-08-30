@@ -4,6 +4,7 @@
 @tailwind components;
 
 :root {
+  cursor: default;
   scroll-behavior: smooth;
 }
 

@@ -16,7 +16,8 @@
     "next": "9.5.2",
     "next-mdx-enhanced": "^4.0.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-player": "^2.6.1"
   },
   "devDependencies": {
     "postcss-flexbugs-fixes": "^4.2.1",

@@ -2,6 +2,8 @@ import { Helmet } from "../components/helmet";
 import { Layout } from "../components/layout";
 import { Next } from "../components/next";
 import { NextProjectProvider } from "../hooks/useNextProject";
+import { PreviewImage } from "../components/previews/previewImage";
+import { PreviewVideo, PreviewGif } from "../components/previews/previewVideo";
 
 const ProjectInfo = ({ label, value }) => {
   return (
@@ -74,15 +76,22 @@ const ProjectLayout = ({ children, frontMatter }) => {
             </div>
             <div className="col-span-3">
               <div className="mt-2 flex flex-col items-center space-y-6">
+                {frontMatter.videos &&
+                  frontMatter.videos.map((url, index) => {
+                    return <PreviewVideo key={index} url={url} />;
+                  })}
+                {frontMatter.gifs &&
+                  frontMatter.gifs.map((url, index) => {
+                    return <PreviewVideo key={index} url={url} />;
+                  })}
                 {frontMatter.images &&
-                  frontMatter.images.map((img, index) => {
+                  frontMatter.images.map((url, index) => {
                     return (
-                      <div key={index}>
-                        <img
-                          src={img}
-                          alt={`${frontMatter.title} screenshot ${index}`}
-                        />
-                      </div>
+                      <PreviewImage
+                        key={index}
+                        url={url}
+                        alt={`${frontMatter.title} screenshot ${index}`}
+                      />
                     );
                   })}
               </div>
