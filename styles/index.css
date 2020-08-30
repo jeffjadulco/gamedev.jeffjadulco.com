@@ -4,7 +4,7 @@
 @tailwind components;
 
 :root {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 ::-moz-selection {

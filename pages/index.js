@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Helmet />
-      <Layout FooterComponent={ContactForm}>
+      <Layout FooterComponent={ContactForm} bShowContactButton={false}>
         <h1 className="mb-24 text-5xl font-bold text-teal-300">
           I’m a game developer with 5+ years of experience, specializing in
           multiplayer and online services.

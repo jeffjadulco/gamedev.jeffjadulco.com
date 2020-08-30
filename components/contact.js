@@ -1,7 +1,9 @@
 export const ContactForm = () => {
   return (
     <>
-      <h1 className="text-6xl font-black">Let's get in touch.</h1>
+      <h1 id="contact" className="text-6xl font-black">
+        Let's get in touch.
+      </h1>
       <p className="max-w-screen-lg text-2xl font-semibold">
         I love experimenting with new technologies and making quality games.
         Feel free to drop me a message about new opportunities - existing
