@@ -4,45 +4,43 @@ const projects = {
       id: "project-xandata",
       title: "Project Xandata",
       image: "/static/images/project-xandata/project-xandata-1.jpg",
-      description: `A skill-based, team-focused, competitive 3v3 first-person shooter by veteran Filipino developers Secret 6.
-      Engage in your chosen play style with an expansive customization system in a world that blends sci-fi & fantasy in a game that blends gunplay discipline with skill-based gameplay.`,
+      description:
+        "A skill-based, team-focused, competitive 3v3 first-person shooter. Explore an expansive customization system in a game that blends gun play discipline with skill-based gameplay.",
+    },
+    {
+      id: "the-chef",
+      title: "The Chef",
+      image: "/static/images/the-chef/the-chef-3.png",
+      description:
+        "A time management game where you have to serve meals to customers while keeping your tummy happy.",
     },
   ],
   projects: [
     {
       id: "cube-party",
       title: "Cube Party",
-      image: "/static/images/project-xandata/project-xandata-1.jpg",
-      // description: `Cube Party is an offline 4-player battle arena where music influences the level.`,
-      description: `A skill-based, team-focused, competitive 3v3 first-person shooter by veteran Filipino developers Secret 6.
-      Engage in your chosen play style with an expansive customization system in a world that blends sci-fi & fantasy in a game that blends gunplay discipline with skill-based gameplay.`,
-    },
-    {
-      id: "abducktion",
-      title: "Abducktion",
-      image: "/static/images/project-xandata/project-xandata-1.jpg",
-      description:
-        "Abducktion is a head-tilting casual game where cultists and aliens must work together to _abduck_ all the ducks of the earth.",
-    },
-    {
-      id: "the-chef",
-      title: "The Chef",
-      image: "/static/images/project-xandata/project-xandata-1.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    },
-    {
-      id: "platon",
-      title: "Platon",
-      image: "/static/images/project-xandata/project-xandata-1.jpg",
-      description:
-        "Platon is a casual match three accompanied with synthwave aesthetics and music.",
+      image: "/static/images/cube-party/cube-party-3.png",
+      description: `An offline 4-player battle arena where music influences the level.`,
     },
     {
       id: "space-shapes",
       title: "Space Shapes",
-      image: "/static/images/project-xandata/project-xandata-1.jpg",
+      image: "/static/images/space-shapes/space-shapes-1.png",
+      description: "A Space Impact clone with shoot 'em up gameplay.",
+    },
+    {
+      id: "abducktion",
+      title: "Abducktion",
+      image: "/static/images/abducktion/abducktion-3.jpg",
       description:
-        "Space Shapes is a Space Impact clone with shoot 'em up gameplay.",
+        "A casual game where cultists and aliens must work together to abduck all the ducks of the earth.",
+    },
+    {
+      id: "platon",
+      title: "Platon",
+      image: "/static/images/platon/platon-1.jpg",
+      description:
+        "A casual match three accompanied by synthwave aesthetics and music.",
     },
   ],
 };

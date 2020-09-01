@@ -13,6 +13,7 @@
     "@next/mdx": "^9.5.2",
     "@tailwindcss/typography": "^0.2.0",
     "autoprefixer": "^9.8.6",
+    "framer-motion": "^2.6.5",
     "next": "9.5.2",
     "next-mdx-enhanced": "^4.0.0",
     "react": "16.13.1",

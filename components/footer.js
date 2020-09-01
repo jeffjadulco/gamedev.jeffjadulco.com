@@ -3,7 +3,7 @@ import Link from "next/link";
 const FooterLink = ({ children, href }) => {
   return (
     <a
-      className="hover:text-teal-300"
+      className="hover:text-teal-300 transition-colors duration-200"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -15,8 +15,8 @@ const FooterLink = ({ children, href }) => {
 
 export const Footer = ({ bShowContactButton = true }) => {
   return (
-    <div className="flex flex-col-reverse lg:flex-row items-center lg:justify-between font-semibold text-2xl">
-      <span>
+    <footer className="flex flex-col-reverse lg:flex-row items-center lg:justify-between font-semibold text-lg sm:text-2xl">
+      <span className="mt-2 lg:mt-0">
         Code and Design by{" "}
         <FooterLink href="https://jeffjadulco.com">Jeff Jadulco</FooterLink>
       </span>
@@ -33,6 +33,6 @@ export const Footer = ({ bShowContactButton = true }) => {
           LinkedIn
         </FooterLink>
       </div>
-    </div>
+    </footer>
   );
 };

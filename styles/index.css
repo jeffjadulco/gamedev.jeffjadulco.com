@@ -9,11 +9,11 @@
 }
 
 ::-moz-selection {
-  @apply bg-teal-300 text-gray-900;
+  @apply bg-gray-400 text-gray-900;
 }
 
 ::selection {
-  @apply bg-teal-300 text-gray-900;
+  @apply bg-gray-400 text-gray-900;
 }
 
 body {
@@ -21,3 +21,36 @@ body {
 }
 
 @tailwind utilities;
+
+.btn {
+  @apply bg-gray-500;
+}
+
+.btn.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  transition: transform 150ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+
+  @apply bg-teal-300;
+}
+
+.btn.slide:hover::before,
+.btn.slide:focus::before {
+  transform: scaleX(1);
+}
+
+.btn.slide {
+  z-index: 1;
+}
+
+.btn.shoot {
+  cursor: crosshair;
+}

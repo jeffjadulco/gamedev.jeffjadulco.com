@@ -38,62 +38,64 @@ const ProjectLayout = ({ children, frontMatter }) => {
       <Helmet />
       <NextProjectProvider currentProject={frontMatter.id}>
         <Layout FooterComponent={Next}>
-          <h1 className="text-6xl font-bold text-teal-300">
+          <h1 className="text-4xl sm:text-6xl font-bold text-teal-300">
             {frontMatter.title}
           </h1>
-          <div className="mt-8 mb-12 flex space-x-20">
-            {frontMatter.type && (
-              <ProjectInfo label="Project Type" value={frontMatter.type} />
-            )}
-            {frontMatter.year && (
-              <ProjectInfo label="Year" value={frontMatter.year} />
-            )}
-            {frontMatter.platform && (
-              <ProjectInfo label="Platform" value={frontMatter.platform} />
-            )}
-            {frontMatter.size && (
-              <ProjectInfo label="Team Size" value={frontMatter.size} />
-            )}
-            {frontMatter.engine && (
-              <ProjectInfo label="Engine & Tools" value={frontMatter.engine} />
-            )}
-          </div>
-          <div className="grid lg:grid-cols-6 gap-16 text-gray-600">
-            <div className="col-span-3">
-              <div className="prose prose-lg">{children}</div>
-              <div className="mt-8 flex space-x-8">
-                {frontMatter.links &&
-                  frontMatter.links.map((link) => {
-                    return (
-                      <ProjectLink
-                        key={link.action}
-                        url={link.url}
-                        label={link.action}
-                      />
-                    );
-                  })}
-              </div>
+          <div>
+            <div className="mt-8 mb-12 grid grid-cols-3 md:flex md:space-x-20">
+              {frontMatter.type && (
+                <ProjectInfo label="Project Type" value={frontMatter.type} />
+              )}
+              {frontMatter.year && (
+                <ProjectInfo label="Year" value={frontMatter.year} />
+              )}
+              {frontMatter.engine && (
+                <ProjectInfo label="Game Engine" value={frontMatter.engine} />
+              )}
+              {frontMatter.size && (
+                <ProjectInfo label="Team Size" value={frontMatter.size} />
+              )}
+              {frontMatter.platform && (
+                <ProjectInfo label="Platform" value={frontMatter.platform} />
+              )}
             </div>
-            <div className="col-span-3">
-              <div className="mt-2 flex flex-col items-center space-y-6">
-                {frontMatter.videos &&
-                  frontMatter.videos.map((url, index) => {
-                    return <PreviewVideo key={index} url={url} />;
-                  })}
-                {frontMatter.gifs &&
-                  frontMatter.gifs.map((url, index) => {
-                    return <PreviewVideo key={index} url={url} />;
-                  })}
-                {frontMatter.images &&
-                  frontMatter.images.map((url, index) => {
-                    return (
-                      <PreviewImage
-                        key={index}
-                        url={url}
-                        alt={`${frontMatter.title} screenshot ${index}`}
-                      />
-                    );
-                  })}
+            <div className="grid lg:grid-cols-6 gap-16 text-gray-600">
+              <div className="col-span-3">
+                <div className="prose prose-lg">{children}</div>
+                <div className="mt-8 flex space-x-8">
+                  {frontMatter.links &&
+                    frontMatter.links.map((link) => {
+                      return (
+                        <ProjectLink
+                          key={link.action}
+                          url={link.url}
+                          label={link.action}
+                        />
+                      );
+                    })}
+                </div>
+              </div>
+              <div className="col-span-3">
+                <div className="mt-2 flex flex-col items-center space-y-6">
+                  {frontMatter.images &&
+                    frontMatter.images.map((url, index) => {
+                      return (
+                        <PreviewImage
+                          key={index}
+                          url={url}
+                          alt={`${frontMatter.title} screenshot ${index}`}
+                        />
+                      );
+                    })}
+                  {frontMatter.videos &&
+                    frontMatter.videos.map((url, index) => {
+                      return <PreviewVideo key={index} url={url} />;
+                    })}
+                  {frontMatter.gifs &&
+                    frontMatter.gifs.map((url, index) => {
+                      return <PreviewGif key={index} url={url} />;
+                    })}
+                </div>
               </div>
             </div>
           </div>

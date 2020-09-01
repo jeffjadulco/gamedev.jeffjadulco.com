@@ -16,7 +16,7 @@ module.exports = {
       height: {
         80: "20rem",
         90: "22.5rem",
-        featured: "32rem",
+        featured: "28rem",
       },
       width: {
         120: "30rem",
@@ -24,6 +24,9 @@ module.exports = {
       },
       letterSpacing: {
         wiiddee: ".25em",
+      },
+      zIndex: {
+        "-10": "-10",
       },
     },
     typography: {
