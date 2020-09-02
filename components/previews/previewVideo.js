@@ -3,9 +3,9 @@ import { default as GifPlayer } from "react-player/lazy";
 
 export const PreviewVideo = ({ url }) => {
   return (
-    <div className="w-160 h-90">
+    <div className="w-full h-56 sm:h-80 md:h-full">
       <YouTubePlayer
-        className="object-cover w-full h-full bg-transparent"
+        className="object-cover"
         url={url}
         width="100%"
         height="100%"
@@ -16,5 +16,15 @@ export const PreviewVideo = ({ url }) => {
 };
 
 export const PreviewGif = ({ url }) => {
-  return <GifPlayer url={url} controls={true} loop={true} />;
+  return (
+    <div className="w-full h-full">
+      <GifPlayer
+        url={url}
+        controls={true}
+        loop={true}
+        width="100%"
+        height="100%"
+      />
+    </div>
+  );
 };

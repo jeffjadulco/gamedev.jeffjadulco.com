@@ -32,6 +32,9 @@ module.exports = {
       zIndex: {
         "-10": "-10",
       },
+      scale: {
+        80: ".8",
+      },
     },
     typography: {
       default: {
@@ -71,6 +74,8 @@ module.exports = {
   },
   variants: {
     textColor: ["responsive", "hover", "focus", "group-focus", "group-hover"],
+    scale: ["responsive", "hover", "focus", "active", "group-hover"],
+    opacity: ["responsive", "hover", "focus", "active", "group-hover"],
   },
   plugins: [require("@tailwindcss/typography")],
 };
