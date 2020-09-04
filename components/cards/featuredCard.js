@@ -29,7 +29,7 @@ export const FeaturedCard = ({ project }) => {
       </div>
       <div className="col-span-2 overflow-hidden">
         <img
-          className="object-cover w-full h-56 md:h-90 lg:h-featured"
+          className="object-cover object-top lg:object-center w-full h-56 md:h-90 lg:h-featured"
           src={project.image}
           alt={`${project.title} image`}
         />

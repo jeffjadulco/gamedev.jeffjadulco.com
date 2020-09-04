@@ -3,7 +3,7 @@ import { default as GifPlayer } from "react-player/lazy";
 
 export const PreviewVideo = ({ url }) => {
   return (
-    <div className="w-full h-56 sm:h-80 md:h-full">
+    <div className="w-full h-64 sm:h-80 md:h-64">
       <YouTubePlayer
         className="object-cover"
         url={url}
@@ -17,7 +17,7 @@ export const PreviewVideo = ({ url }) => {
 
 export const PreviewGif = ({ url }) => {
   return (
-    <div className="w-full h-full">
+    <div className="my-auto align-middle w-full h-full">
       <GifPlayer
         url={url}
         controls={true}

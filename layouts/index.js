@@ -89,13 +89,13 @@ const ProjectLayout = ({ children, frontMatter }) => {
                       />
                     );
                   })}
-                {frontMatter.videos &&
-                  frontMatter.videos.map((url, index) => {
-                    return <PreviewVideo key={index} url={url} />;
-                  })}
                 {frontMatter.gifs &&
                   frontMatter.gifs.map((url, index) => {
                     return <PreviewGif key={index} url={url} />;
+                  })}
+                {frontMatter.videos &&
+                  frontMatter.videos.map((url, index) => {
+                    return <PreviewVideo key={index} url={url} />;
                   })}
               </div>
             </div>
