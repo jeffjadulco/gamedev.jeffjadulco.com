@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Tag } from "../tag";
 
 export const FeaturedCard = ({ project }) => {
   return (
@@ -14,9 +15,12 @@ export const FeaturedCard = ({ project }) => {
             </a>
           </Link>
         </h2>
-        <p className="mb-12 text-base md:text-lg text-gray-600">
+        <p className="mb-4 text-base md:text-lg text-gray-600">
           {project.description}
         </p>
+        <div className="mb-10 flex flex-wrap space-x-2">
+          {project.tags && project.tags.map((tag) => <Tag tag={tag} />)}
+        </div>
         <div className="mb-6">
           <Link href={`/project/${project.id}`}>
             <a>
