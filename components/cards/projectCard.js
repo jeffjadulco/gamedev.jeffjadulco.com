@@ -14,7 +14,8 @@ export const ProjectCard = ({ project }) => {
               {project.description}
             </p>
             <div className="mt-4 mb-3 flex flex-wrap space-x-2">
-              {project.tags && project.tags.map((tag) => <Tag tag={tag} />)}
+              {project.tags &&
+                project.tags.map((tag) => <Tag key={tag} tag={tag} />)}
             </div>
           </div>
           <div className="grayscale-overlay">

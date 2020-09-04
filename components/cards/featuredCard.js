@@ -22,7 +22,8 @@ export const FeaturedCard = ({ project }) => {
                 {project.description}
               </p>
               <div className="mb-5 flex flex-wrap space-x-2">
-                {project.tags && project.tags.map((tag) => <Tag tag={tag} />)}
+                {project.tags &&
+                  project.tags.map((tag) => <Tag key={tag} tag={tag} />)}
               </div>
               {/* <div className="mb-12">
                 <Link href={`/project/${project.id}`}>
