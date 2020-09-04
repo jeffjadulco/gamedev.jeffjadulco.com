@@ -19,7 +19,7 @@ export default function Home() {
             <FeaturedCard key={project.id} project={project} />
           ))}
         </div>
-        <div className="lg:-mx-8 mt-12 grid lg:grid-cols-2 gap-12">
+        <div className="lg:-mx-8 mt-12 grid lg:grid-cols-2 gap-y-12 gap-x-10">
           {projects.projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
