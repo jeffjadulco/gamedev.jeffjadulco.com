@@ -17,8 +17,10 @@ export const Helmet = ({ title, og }) => {
       <title>{metadata.title}</title>
       <link rel="icon" href="/favicon.png" />
       <meta name="theme-color" content="#81E6D9" />
+      <meta name="title" content={metadata.title} />
       <meta name="description" content={metadata.description} />
       <meta name="image" content="/og.png" />
+
       <meta property="og:title" content="Jeff Jadulco" />
       <meta property="og:description" content={metadata.description} />
       <meta property="og:url" content={router.route} />
