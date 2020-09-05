@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+import { fadeInUp, stagger } from "../animations";
 
 export const Thanks = () => {
   const router = useRouter();
@@ -11,12 +13,23 @@ export const Thanks = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full min-h-screen h-full justify-center mx-auto max-w-screen-lg px-5 lg:px-0">
-      <h1 className="text-4xl sm:text-6xl font-black">Thank you!</h1>
-      <p className="text-4xl sm:text-6xl font-black">
+    <motion.div
+      className="flex flex-col w-full min-h-screen h-full justify-center mx-auto max-w-screen-lg px-5 lg:px-0"
+      initial="initial"
+      animate="animate"
+      exit={{ opacity: 0 }}
+      variants={stagger}
+    >
+      <motion.h1
+        className="text-4xl sm:text-6xl font-black"
+        variants={fadeInUp}
+      >
+        Thank you!
+      </motion.h1>
+      <motion.p className="text-4xl sm:text-6xl font-black" variants={fadeInUp}>
         We'll be in touch soon. 😊
-      </p>
-    </div>
+      </motion.p>
+    </motion.div>
   );
 };
 

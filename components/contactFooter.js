@@ -1,8 +1,24 @@
+import { useRouter } from "next/router";
 import { Footer } from "./footer";
 import { useForm, ValidationError } from "@statickit/react";
+import { useEffect, useState } from "react";
 
 export const ContactFooter = () => {
-  const [state, handleSubmit] = useForm("contactForm");
+  const router = useRouter();
+  const [formState, handleSubmit] = useForm("contactForm");
+  const [suceeded, setSucceeded] = useState(false);
+
+  useEffect(() => {
+    if (formState.succeeded) {
+      setSucceeded(true);
+    }
+  }, [formState]);
+
+  useEffect(() => {
+    if (suceeded) {
+      router.push("/thanks");
+    }
+  }, [suceeded]);
 
   return (
     <div className="relative pt-4 sm:pt-10 lg:pt-24 pb-16 bg-gray-950 border-b-4 border-teal-300">
@@ -39,7 +55,7 @@ export const ContactFooter = () => {
                 <ValidationError
                   field="name"
                   prefix="Name"
-                  errors={state.errors}
+                  errors={formState.errors}
                 />
               </div>
               <div className="group">
@@ -75,7 +91,7 @@ export const ContactFooter = () => {
                 <ValidationError
                   field="email"
                   prefix="Email"
-                  errors={state.errors}
+                  errors={formState.errors}
                 />
               </div>
             </div>
@@ -98,18 +114,17 @@ export const ContactFooter = () => {
                 <ValidationError
                   field="message"
                   prefix="Message"
-                  errors={state.errors}
+                  errors={formState.errors}
                 />
               </div>
               <div className="flex justify-end">
                 <button
                   type="submit"
                   className="btn shoot slide relative w-48 px-8 py-4 font-bold text-gray-900 text-lg"
-                  disabled={state.submitting}
+                  disabled={formState.submitting}
                 >
-                  SHOOT
+                  {formState.submitting ? "LOADING" : "SHOOT"}
                 </button>
-                {state.succeeded && <div>thank you!</div>}
               </div>
             </div>
           </form>

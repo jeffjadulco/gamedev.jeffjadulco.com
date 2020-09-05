@@ -1,9 +1,26 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Tag } from "../tag";
+import { easing } from "../../animations";
+
+const fadeInUp = {
+  initial: {
+    y: 20,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+};
 
 export const FeaturedCard = ({ project }) => {
   return (
-    <div>
+    <motion.div variants={fadeInUp}>
       <Link href={`/project/${project.id}`}>
         <a>
           <div className="group lg:-mx-8 flex flex-col-reverse lg:grid lg:grid-cols-3 lg:h-featured bg-gray-950 shadow-sm rounded-sm transform hover:-translate-y-2 hover:shadow-lg transition-all duration-200">
@@ -45,6 +62,6 @@ export const FeaturedCard = ({ project }) => {
           </div>
         </a>
       </Link>
-    </div>
+    </motion.div>
   );
 };

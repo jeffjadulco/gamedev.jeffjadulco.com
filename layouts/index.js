@@ -4,13 +4,41 @@ import { Next } from "../components/next";
 import { NextProjectProvider } from "../hooks/useNextProject";
 import { PreviewImage } from "../components/previews/previewImage";
 import { PreviewVideo, PreviewGif } from "../components/previews/previewVideo";
+import { motion } from "framer-motion";
+import { easing } from "../animations";
+
+export const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
+};
+
+export const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 const ProjectInfo = ({ label, value }) => {
   return (
-    <div className="flex-row mr-8 mb-5 md:mb-0 md:mr-0">
+    <motion.div
+      className="flex-row mr-8 mb-5 md:mb-0 md:mr-0"
+      variants={fadeInUp}
+    >
       <div className="text-lg font-bold text-gray-500">{label}</div>
       <div className="text-lg">{value}</div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -41,65 +69,98 @@ const ProjectLayout = ({ children, frontMatter }) => {
       <Helmet />
       <NextProjectProvider currentProject={frontMatter.id}>
         <Layout FooterComponent={Next}>
-          <h1 className="text-4xl sm:text-6xl font-bold text-teal-300">
-            {frontMatter.title}
-          </h1>
-          <div>
-            <div className="mt-8 mb-12 flex flex-wrap sm:flex sm:space-x-10 md:space-x-16 lg:space-x-20">
-              {frontMatter.type && (
-                <ProjectInfo label="Project Type" value={frontMatter.type} />
-              )}
-              {frontMatter.year && (
-                <ProjectInfo label="Year" value={frontMatter.year} />
-              )}
-              {frontMatter.engine && (
-                <ProjectInfo label="Game Engine" value={frontMatter.engine} />
-              )}
-              {frontMatter.size && (
-                <ProjectInfo label="Team Size" value={frontMatter.size} />
-              )}
-              {frontMatter.platform && (
-                <ProjectInfo label="Platform" value={frontMatter.platform} />
-              )}
-            </div>
-            <div className="grid lg:grid-cols-6 gap-16 text-gray-600">
-              <div className="col-span-3">
-                <div className="prose prose-lg">{children}</div>
-                <div className="mt-8 flex space-x-4 md:space-x-8">
-                  {frontMatter.links &&
-                    frontMatter.links.map((link) => {
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit={{ opacity: 0 }}
+            variants={stagger}
+          >
+            <motion.h1
+              className="text-4xl sm:text-6xl font-bold text-teal-300"
+              variants={fadeInUp}
+            >
+              {frontMatter.title}
+            </motion.h1>
+            <div>
+              <motion.div className="mt-8 mb-12 flex flex-wrap sm:flex sm:space-x-10 md:space-x-16 lg:space-x-20">
+                {frontMatter.type && (
+                  <ProjectInfo
+                    key="Project Type"
+                    label="Project Type"
+                    value={frontMatter.type}
+                  />
+                )}
+                {frontMatter.year && (
+                  <ProjectInfo
+                    key="Year"
+                    label="Year"
+                    value={frontMatter.year}
+                  />
+                )}
+                {frontMatter.engine && (
+                  <ProjectInfo
+                    key="Game Engine"
+                    label="Game Engine"
+                    value={frontMatter.engine}
+                  />
+                )}
+                {frontMatter.size && (
+                  <ProjectInfo
+                    key="Team Size"
+                    label="Team Size"
+                    value={frontMatter.size}
+                  />
+                )}
+                {frontMatter.platform && (
+                  <ProjectInfo
+                    key="Platform"
+                    label="Platform"
+                    value={frontMatter.platform}
+                  />
+                )}
+              </motion.div>
+              <motion.div
+                className="grid lg:grid-cols-6 gap-16 text-gray-600"
+                variants={fadeInUp}
+              >
+                <div className="col-span-3">
+                  <div className="prose prose-lg">{children}</div>
+                  <div className="mt-8 flex space-x-4 md:space-x-8">
+                    {frontMatter.links &&
+                      frontMatter.links.map((link) => {
+                        return (
+                          <ProjectLink
+                            key={link.action}
+                            url={link.url}
+                            label={link.action}
+                          />
+                        );
+                      })}
+                  </div>
+                </div>
+                <div className="col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+                  {frontMatter.images &&
+                    frontMatter.images.map((url, index) => {
                       return (
-                        <ProjectLink
-                          key={link.action}
-                          url={link.url}
-                          label={link.action}
+                        <PreviewImage
+                          key={index}
+                          url={url}
+                          alt={`${frontMatter.title} screenshot ${index}`}
                         />
                       );
                     })}
+                  {frontMatter.gifs &&
+                    frontMatter.gifs.map((url, index) => {
+                      return <PreviewGif key={index} url={url} />;
+                    })}
+                  {frontMatter.videos &&
+                    frontMatter.videos.map((url, index) => {
+                      return <PreviewVideo key={index} url={url} />;
+                    })}
                 </div>
-              </div>
-              <div className="col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
-                {frontMatter.images &&
-                  frontMatter.images.map((url, index) => {
-                    return (
-                      <PreviewImage
-                        key={index}
-                        url={url}
-                        alt={`${frontMatter.title} screenshot ${index}`}
-                      />
-                    );
-                  })}
-                {frontMatter.gifs &&
-                  frontMatter.gifs.map((url, index) => {
-                    return <PreviewGif key={index} url={url} />;
-                  })}
-                {frontMatter.videos &&
-                  frontMatter.videos.map((url, index) => {
-                    return <PreviewVideo key={index} url={url} />;
-                  })}
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </Layout>
       </NextProjectProvider>
     </>
