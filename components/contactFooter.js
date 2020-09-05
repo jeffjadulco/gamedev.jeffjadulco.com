@@ -1,9 +1,8 @@
 import { Footer } from "./footer";
+import { useForm, ValidationError } from "@statickit/react";
 
 export const ContactFooter = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const [state, handleSubmit] = useForm("contactForm");
 
   return (
     <div className="relative pt-4 sm:pt-10 lg:pt-24 pb-16 bg-gray-950 border-b-4 border-teal-300">
@@ -35,6 +34,12 @@ export const ContactFooter = () => {
                   name="name"
                   placeholder="Enter your name"
                   type="text"
+                  required
+                />
+                <ValidationError
+                  field="name"
+                  prefix="Name"
+                  errors={state.errors}
                 />
               </div>
               <div className="group">
@@ -65,6 +70,12 @@ export const ContactFooter = () => {
                   name="email"
                   placeholder="Enter your email address"
                   type="email"
+                  required
+                />
+                <ValidationError
+                  field="email"
+                  prefix="Email"
+                  errors={state.errors}
                 />
               </div>
             </div>
@@ -82,15 +93,23 @@ export const ContactFooter = () => {
                   name="message"
                   placeholder="Enter your message"
                   type="text"
+                  required
+                />
+                <ValidationError
+                  field="message"
+                  prefix="Message"
+                  errors={state.errors}
                 />
               </div>
               <div className="flex justify-end">
                 <button
                   type="submit"
                   className="btn shoot slide relative w-48 px-8 py-4 font-bold text-gray-900 text-lg"
+                  disabled={state.submitting}
                 >
                   SHOOT
                 </button>
+                {state.succeeded && <div>thank you!</div>}
               </div>
             </div>
           </form>

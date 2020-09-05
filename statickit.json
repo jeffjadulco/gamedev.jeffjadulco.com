@@ -1,0 +1,22 @@
+{
+  "forms": {
+    "contactForm": {
+      "name": "Contact Form",
+      "actions": [{ "type": "email", "to": "hey+portfolio@jeffjadulco.com" }],
+      "fields": {
+        "name": {
+          "type": "text",
+          "required": true
+        },
+        "email": {
+          "type": "email",
+          "required": true
+        },
+        "message": {
+          "type": "text",
+          "required": true
+        }
+      }
+    }
+  }
+}

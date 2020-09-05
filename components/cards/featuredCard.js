@@ -13,9 +13,9 @@ export const FeaturedCard = ({ project }) => {
               </div>
               <h2 className="mt-3 mb-1 text-3xl md:text-4xl font-bold text-gray-500">
                 <Link href={`/project/${project.id}`}>
-                  <a className="group-hover:text-teal-300 transition-colors duration-200">
+                  <span className="group-hover:text-teal-300 transition-colors duration-200">
                     {project.title}
-                  </a>
+                  </span>
                 </Link>
               </h2>
               <p className="mb-5 text-base md:text-lg text-gray-600">

@@ -11,6 +11,7 @@
     "@mdx-js/loader": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
     "@next/mdx": "^9.5.2",
+    "@statickit/react": "^2.1.1",
     "@tailwindcss/typography": "^0.2.0",
     "autoprefixer": "^9.8.6",
     "framer-motion": "^2.6.5",
