@@ -1,10 +1,35 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
-export const Helmet = () => {
+const persistentTitle = "Jeff Jadulco | Game Developer Portfolio";
+
+export const Helmet = ({ title, og }) => {
+  const router = useRouter();
+  const metadata = {
+    title: title ? `${title} | ${persistentTitle}` : persistentTitle,
+    image: "/og.png",
+    description:
+      "Jeff Jadulco is a game programmer with 5+ years of experience, specializing in multiplayer and online services.",
+  };
+
   return (
     <Head>
-      <title>Jeff Jadulco | Game Developer Portfolio</title>
-      <link rel="icon" href="/favicon.ico" />
+      <title>{metadata.title}</title>
+      <link rel="icon" href="/favicon.png" />
+      <meta name="theme-color" content="#81E6D9" />
+      <meta name="description" content={metadata.description} />
+      <meta name="image" content="/og.png" />
+      <meta property="og:title" content="Jeff Jadulco" />
+      <meta property="og:description" content={metadata.description} />
+      <meta property="og:url" content={router.route} />
+      <meta property="og:image" content={metadata.image} />
+      <meta property="og:type" content="website" />
+
+      <meta property="twitter:title" content="Jeff Jadulco" />
+      <meta property="twitter:description" content={metadata.description} />
+      <meta property="twitter:image" content={metadata.image} />
+      <meta property="twitter:creator" content="@jeffjadulco" />
+      <meta property="twitter:card" content="summary_large_image" />
     </Head>
   );
 };

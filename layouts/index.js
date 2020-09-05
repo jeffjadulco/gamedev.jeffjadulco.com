@@ -66,7 +66,7 @@ const ProjectLink = ({ label, url }) => {
 const ProjectLayout = ({ children, frontMatter }) => {
   return (
     <>
-      <Helmet />
+      <Helmet title={frontMatter.title} />
       <NextProjectProvider currentProject={frontMatter.id}>
         <Layout FooterComponent={Next}>
           <motion.div
