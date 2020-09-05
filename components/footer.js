@@ -3,7 +3,7 @@ import Link from "next/link";
 const FooterLink = ({ children, href }) => {
   return (
     <a
-      className="hover:text-teal-300 transition-colors duration-200"
+      className="hover:text-teal-300 focus:text-teal-300 transition-colors duration-200"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -22,8 +22,8 @@ export const Footer = ({ bShowContactButton = true }) => {
       </span>
       <div className="flex justify-end space-x-5">
         {bShowContactButton && (
-          <Link href="/#contact" scroll={false}>
-            <a className="hover:text-teal-300">Contact</a>
+          <Link href="/" scroll={true}>
+            <a className="hover:text-teal-300 focus:text-teal-300">Home</a>
           </Link>
         )}
         <FooterLink href="mailto:hey@jeffjadulco.com">Email</FooterLink>

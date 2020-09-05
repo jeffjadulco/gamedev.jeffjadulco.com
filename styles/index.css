@@ -8,6 +8,10 @@
   scroll-behavior: smooth;
 }
 
+*:focus {
+  outline: none;
+}
+
 ::-moz-selection {
   @apply bg-gray-400 text-gray-900;
 }
