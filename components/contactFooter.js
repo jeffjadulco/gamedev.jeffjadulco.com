@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { Footer } from "./footer";
-import { useForm, ValidationError } from "@statickit/react";
+import { useForm, ValidationError } from "@formspree/react";
 import { useEffect, useState } from "react";
 
 export const ContactFooter = () => {
