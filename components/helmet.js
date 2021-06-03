@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { GA_TRACKING_ID } from "../lib/gtag";
 
 const persistentTitle = "Jeff Jadulco | Game Developer Portfolio";
 
 export const Helmet = ({ title, og }) => {
   const router = useRouter();
+
   const metadata = {
     title: title ? `${title} | ${persistentTitle}` : persistentTitle,
     image: "/og.png",
@@ -35,21 +35,11 @@ export const Helmet = ({ title, og }) => {
       <meta property="twitter:card" content="summary_large_image" />
 
       <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
-      />
+        data-goatcounter={`https://${process.env.NEXT_PUBLIC_GOAT_COUNTER_CODE}.goatcounter.com/count`}
+        data-goatcounter-settings='{"allow_local": true}'
+        async={true}
+        src="//gc.zgo.at/count.js"
+      ></script>
     </Head>
   );
 };
