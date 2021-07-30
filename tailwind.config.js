@@ -16,6 +16,10 @@ module.exports = {
           ...defaultTheme.colors.gray,
           950: "#161B25",
         },
+        back: {
+          primary: "#0C111C",
+          secondary: "#111827",
+        },
       },
       height: {
         80: "20rem",
@@ -39,24 +43,24 @@ module.exports = {
     typography: {
       default: {
         css: {
-          color: defaultTheme.colors.gray[600],
+          color: defaultTheme.colors.gray[500],
           a: {
-            color: defaultTheme.colors.gray[600],
+            color: defaultTheme.colors.gray[500],
             "&:hover": {
               color: defaultTheme.colors.teal[300],
             },
           },
           h1: {
-            color: defaultTheme.colors.gray[500],
+            color: defaultTheme.colors.gray[400],
           },
           h2: {
-            color: defaultTheme.colors.gray[500],
+            color: defaultTheme.colors.gray[400],
           },
           h3: {
-            color: defaultTheme.colors.gray[500],
+            color: defaultTheme.colors.gray[400],
           },
           h4: {
-            color: defaultTheme.colors.gray[500],
+            color: defaultTheme.colors.gray[400],
           },
           strong: {
             color: defaultTheme.colors.gray[500],

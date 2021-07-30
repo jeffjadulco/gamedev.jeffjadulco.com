@@ -21,7 +21,7 @@ export const ContactFooter = () => {
   }, [suceeded]);
 
   return (
-    <div className="relative pt-4 sm:pt-10 lg:pt-24 pb-16 bg-gray-950 border-b-4 border-teal-300">
+    <div className="relative pt-4 sm:pt-10 lg:pt-24 pb-16 bg-back-secondary border-b-4 border-teal-300 text-gray-500">
       <div className="container m-auto h-full max-w-screen-lg px-8 md:px-12 lg:px-0 flex flex-col justify-between space-y-12 lg:space-y-64">
         <div className="h-60">
           <h1 id="contact" className="text-4xl sm:text-6xl font-black">

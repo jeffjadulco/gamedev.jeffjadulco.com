@@ -23,9 +23,9 @@ export const FeaturedCard = ({ project }) => {
     <motion.div variants={fadeInUp}>
       <Link href={`/project/${project.id}`}>
         <a>
-          <div className="group lg:-mx-8 flex flex-col-reverse lg:grid lg:grid-cols-3 lg:h-featured bg-gray-950 shadow-sm rounded-sm transform hover:-translate-y-2 hover:shadow-lg active:-translate-y-2 active:shadow-lg transition-all duration-200">
+          <div className="group lg:-mx-8 flex flex-col-reverse lg:grid lg:grid-cols-3 lg:h-featured bg-back-secondary shadow-sm rounded-sm transform hover:-translate-y-2 hover:shadow-lg active:-translate-y-2 active:shadow-lg transition-all duration-200">
             <div className="px-6 py-6 md:px-8 md:py-8">
-              <div className="text-sm sm:text-base tracking-wiiddee text-gray-700">
+              <div className="text-sm sm:text-base tracking-wiiddee text-gray-600">
                 FEATURED PROJECT
               </div>
               <h2 className="mt-3 mb-1 text-3xl md:text-4xl font-bold text-gray-500">

@@ -5,7 +5,7 @@ import { Footer } from "./footer";
 export const Next = () => {
   const { nextProject: project } = useNextProject();
   return (
-    <div className="pt-12 md:pt-24 pb-16 bg-gray-950 border-b-4 border-teal-300">
+    <div className="pt-12 md:pt-24 pb-16 bg-back-secondary border-b-4 border-teal-300">
       <div className="container m-auto h-full flex flex-col justify-between space-y-40">
         <div className="group flex flex-col-reverse lg:flex-row justify-center md:items-center space-x-0 lg:space-x-6">
           <Link href={`/project/${project.id}`}>

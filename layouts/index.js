@@ -36,8 +36,8 @@ const ProjectInfo = ({ label, value }) => {
       className="flex-row mr-8 mb-5 md:mb-0 md:mr-0"
       variants={fadeInUp}
     >
-      <div className="text-lg font-bold text-gray-500">{label}</div>
-      <div className="text-lg">{value}</div>
+      <div className="text-lg font-bold text-gray-400">{label}</div>
+      <div className="text-lg text-gray-500">{value}</div>
     </motion.div>
   );
 };
